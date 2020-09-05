@@ -10,20 +10,16 @@ void setup() {
 
 void loop() {
     button.check();
-    if (button.press_flag){
+    if (button.press()){
       Serial.print("Button pressed ... ");
-      button.press_flag = false;
     }
-    if (button.short_press_flag){
+    if (button.short_press()){
       Serial.print("short press.\n");
-      button.short_press_flag = false;
     }
-    if (button.long_press_flag){
+    if (button.long_press()){
       Serial.print("long press ... ");
-      button.long_press_flag = false;
     }
-    if (button.release_long_flag){
+    if (button.long_released()){
       Serial.print("released.\n");
-      button.release_long_flag = false;
     }
 }

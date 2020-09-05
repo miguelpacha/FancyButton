@@ -12,6 +12,7 @@ FancyButton::FancyButton(int pin){
     pinMode(pin, INPUT_PULLUP);
     _pin = pin;
 }
+
 void FancyButton::check(){
   _reading = digitalRead(_pin);
   switch(_state){
@@ -54,4 +55,34 @@ void FancyButton::check(){
   _last_reading = _reading;
 }
 
+bool FancyButton::press(){
+    if (press_flag){
+      press_flag = false;
+      return true;
+    }
+    return false;
+}
 
+bool FancyButton::short_press(){
+    if (short_press_flag){
+      short_press_flag = false;
+      return true;
+    }
+    return false;
+}
+
+bool FancyButton::long_press(){
+    if (long_press_flag){
+      long_press_flag = false;
+      return true;
+    }
+    return false;
+}
+
+bool FancyButton::long_released(){
+    if (release_long_flag){
+      release_long_flag = false;
+      return true;
+    }
+    return false;
+}

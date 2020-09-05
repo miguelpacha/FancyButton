@@ -5,7 +5,6 @@
  * License: LGPL
  */
 
-
 #ifndef FancyButton_h
 #define FancyButton_h
 
@@ -16,6 +15,10 @@ class FancyButton
   public:
     FancyButton(int pin);
     void check();
+    bool press();
+    bool short_press();
+    bool long_press();
+    bool long_released();
     volatile bool press_flag;
     volatile bool short_press_flag;
     volatile bool long_press_flag;
