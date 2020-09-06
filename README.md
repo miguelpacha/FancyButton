@@ -17,7 +17,7 @@ You must then invoke the ```check ``` method regularly, for example at the start
 void loop() {
   button.check()
   
-  // you code goes here
+  // your code goes here
 
 }
 ```
